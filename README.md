@@ -12,20 +12,6 @@ Installing
 Example Output
 ----------
 
-zinky
-=====
-
-Use the zip details of post 2007 office documents to find hinky files.
-
-Installing
-----------
-1) Download and install python2.7 https://www.python.org/download
-
-2) Download and install docopt https://github.com/docopt/docopt
-
-Example Output
-----------
-
 Below is an example output from zinky. It shows a few indications that the document may have been faked:
 
 1) The `[Content_Types].xml` file is normally found as the first entry in a zip created by Microsoft products. When documents have been modified and zipped with other software this isn't always the case, and therefore may be hinky.
