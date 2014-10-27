@@ -64,6 +64,8 @@ def test_document(path,safe,track_changes):
         print
         find_content_xml(path)
         with zipfile.ZipFile(path, 'r') as zip:
+            #list all details
+            all_file_info = zip.infolist()
             if track_changes:
                 print "TRACK CHANGES"
                 print "---------------------------------------------"
@@ -73,16 +75,14 @@ def test_document(path,safe,track_changes):
                         print file.filename
                         for item in results:
                             print item
-                        print
+                print
             print "docProps/core.xml"
             print "---------------------------------------------"
             try:
                 read_core_docProps(zip.open('docProps/core.xml'),zip.getinfo('docProps/core.xml'),safe)
             except KeyError:
                 print "ERROR! Cannot find docProps/core.xml. We would expect to see this is a post 2007 office document"
-            #list all details
-            all_file_info = zip.infolist()
-
+            
             for file in all_file_info:
                 if file.filename != 'docProps/core.xml':
                     print file.filename
